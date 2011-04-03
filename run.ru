@@ -1,5 +1,7 @@
 #!/usr/bin/env rackup
-require File.dirname(__FILE__) + "/git-wiki"
+require_relative "./lib/wiki"
 
-run GitWiki.new(File.expand_path(ARGV[1] || "~/wiki"),
-  ARGV[2] || ".markdown", ARGV[3] || "Home")
+repository = File.expand_path(ARGV[1] || "~/.wiki")
+extension  = ARGV[2] || ".markdown"
+homepage   = ARGV[3] || "Home"
+run GitWiki.new(repository, extension, homepage)
