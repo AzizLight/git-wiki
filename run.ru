@@ -1,5 +1,5 @@
 #!/usr/bin/env rackup
-require_relative "./lib/wiki"
+require File.join(File.dirname(__FILE__), "lib/wiki")
 
 repository = File.expand_path(ARGV[1] || "~/.wiki")
 extension  = ARGV[2] || ".markdown"
