@@ -1,10 +1,7 @@
-@@ edit
-- title "Editing #{@page.name}"
-%h1= title
-%form{:method => 'POST', :action => "/#{@page}"}
-  %p
-    %textarea{:name => 'body', :rows => 30, :style => "width: 100%"}= @page.content
-  %p
-    %input.submit{:type => :submit, :value => "Save as the newest version"}
-    or
-    %a.cancel{:href=>"/#{@page}"} cancel
+<% title = "Editing #{@page.name}" %>
+<h1><%= title %></h1>
+<form action="/<%= @page %>" method="post" accept-charset="utf-8">
+  <p><textarea name="body" rows="30" style="width: 100%"><%= @page.content %></textarea></p>
+
+  <p><input type="submit" value="Save"> or <a href="/<%= @page %>">cancel</p>
+</form>

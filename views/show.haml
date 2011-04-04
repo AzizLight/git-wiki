@@ -1,7 +1,11 @@
-@@ show
-- title @page.name
-#edit
-  %a{:href => "/#{@page}/edit"} Edit this page
+<% title = @page.name %>
+<div id="edit">
+  <a href="/<% @page %>/edit">Edit this page</a>
+</div>
 %h1= title
-#content
-  ~"#{@page.to_html}"
+<h1><%= title %></h1>
+<div id="content">
+  <%# ~"#{@page.to_html}" %>
+  <p><%= @page.to_html %></p>
+</div>
+  

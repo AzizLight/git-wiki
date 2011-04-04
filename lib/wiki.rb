@@ -1,5 +1,5 @@
 require "sinatra/base"
-require "haml"
+require "erb"
 require "grit"
 require "rdiscount"
 

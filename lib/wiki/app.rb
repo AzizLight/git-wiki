@@ -1,8 +1,7 @@
 module GitWiki
   class App < Sinatra::Base
     set :app_file, __FILE__
-    set :haml, { :format        => :html5,
-                 :attr_wrapper  => '"'     }
+
     use_in_file_templates!
 
     error PageNotFound do
@@ -20,17 +19,17 @@ module GitWiki
 
     get "/pages" do
       @pages = Page.find_all
-      haml :list
+      erb :list
     end
 
     get "/:page/edit" do
       @page = Page.find_or_create(params[:page])
-      haml :edit
+      erb :edit
     end
 
     get "/:page" do
       @page = Page.find(params[:page])
-      haml :show
+      erb :show
     end
 
     post "/:page" do

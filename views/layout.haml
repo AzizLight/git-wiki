@@ -1,12 +1,18 @@
-@@ layout
-!!!
-%html
-  %head
-    %title= title
-  %body
-    %ul
-      %li
-        %a{ :href => "/#{GitWiki.homepage}" } Home
-      %li
-        %a{ :href => "/pages" } All pages
-    #content= yield
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <title><%= title %></title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/<%= GitWiki.homepage %>">Home</a></li>
+      <li><a href="/pages">All pages</a></li>
+    </ul>
+    
+    <section id="content">
+      <%= yield %>
+    </section>
+  </body>
+</html>
