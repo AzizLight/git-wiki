@@ -1,8 +1,7 @@
 module GitWiki
   class App < Sinatra::Base
     set :app_file, __FILE__
-
-    use_in_file_templates!
+    set :root, File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
 
     error PageNotFound do
       page = request.env["sinatra.error"].name
