@@ -1,7 +1,10 @@
 module GitWiki
   class App < Sinatra::Base
-    set :app_file, __FILE__
-    set :root, File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
+
+    configure do
+      set :app_file, __FILE__
+      set :root, File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
+    end
 
     error PageNotFound do
       page = request.env["sinatra.error"].name
