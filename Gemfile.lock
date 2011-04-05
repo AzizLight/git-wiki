@@ -1,0 +1,27 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    bcrypt-ruby (2.1.4)
+    diff-lcs (1.1.2)
+    grit (2.4.1)
+      diff-lcs (~> 1.1)
+      mime-types (~> 1.15)
+    mime-types (1.16)
+    rack (1.2.2)
+    rack-flash (0.1.1)
+      rack
+    rdiscount (1.6.8)
+    sinatra (1.2.1)
+      rack (~> 1.1)
+      tilt (>= 1.2.2, < 2.0)
+    tilt (1.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bcrypt-ruby (= 2.1.4)
+  grit (= 2.4.1)
+  rack-flash (= 0.1.1)
+  rdiscount (= 1.6.8)
+  sinatra (= 1.2.1)
