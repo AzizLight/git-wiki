@@ -27,13 +27,13 @@ if password.empty?
   $stderr.puts "\nERROR: Password can't be blank"
   exit
 else
-  user[:password] = BCrypt::Password.create(password)
+  user[:password] = BCrypt::Password.create(password).to_s
   print "[Password]\n----\n"
 end
 # ------------------------------------------------------------------------------
 
 # Create the temporary config file
-f = File.new('config/user.sample.yml', 'w')
+f = File.new('../config/user.sample.yml', 'w')
 f.puts user.to_yaml
 f.close
 

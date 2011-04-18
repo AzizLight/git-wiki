@@ -2,6 +2,9 @@ require "sinatra/base"
 require "erb"
 require "grit"
 require "rdiscount"
+require "bcrypt"
+require "yaml"
+
 
 module GitWiki
   class << self
@@ -19,4 +22,5 @@ end
 
 require_relative "wiki/page_not_found"
 require_relative "wiki/page"
+require_relative "wiki/user"
 require_relative "wiki/app"

@@ -6,6 +6,16 @@
     <title><%= title %></title>
   </head>
   <body>
+    
+    <!-- This will be floated right on the top bar -->
+     <% if logged_in? %>
+         <p>Hello, <%= @user %>.
+         <strong><a href="/logout">Log out</a></strong></p>
+     <% else %>
+         <p>Hello, Stranger.
+         <strong><a href="/login">Log in</a></strong></p>
+     <% end %>
+    
     <ul>
       <li><a href="/<%= GitWiki.homepage %>">Home</a></li>
       <li><a href="/pages">All pages</a></li>
